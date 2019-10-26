@@ -17,7 +17,7 @@ namespace nba_project.Controllers
         // GET: Equipos
         public ActionResult Index()
         {
-            var equipos = db.Equipos.Include(e => e.Division).Include(e => e.Estado);
+            var equipos = db.Equipos.Include(e => e.Conferencia).Include(e => e.Division).Include(e => e.Estado).OrderBy(s => s.Conferencia.Name);
             return View(equipos.ToList());
         }
 
@@ -39,6 +39,7 @@ namespace nba_project.Controllers
         // GET: Equipos/Create
         public ActionResult Create()
         {
+            ViewBag.ConferenciaID = new SelectList(db.Conferencias, "ConferenciaID", "Name");
             ViewBag.DivisionID = new SelectList(db.Divisions, "DivisionID", "Name");
             ViewBag.EstadoID = new SelectList(db.Estados, "EstadoID", "Name");
             return View();
@@ -49,7 +50,7 @@ namespace nba_project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EquipoID,Name,DivisionID,EstadoID")] Equipo equipo)
+        public ActionResult Create([Bind(Include = "EquipoID,Name,DivisionID,EstadoID,ConferenciaID")] Equipo equipo)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +59,7 @@ namespace nba_project.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ConferenciaID = new SelectList(db.Conferencias, "ConferenciaID", "Name", equipo.ConferenciaID);
             ViewBag.DivisionID = new SelectList(db.Divisions, "DivisionID", "Name", equipo.DivisionID);
             ViewBag.EstadoID = new SelectList(db.Estados, "EstadoID", "Name", equipo.EstadoID);
             return View(equipo);
@@ -75,6 +77,7 @@ namespace nba_project.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ConferenciaID = new SelectList(db.Conferencias, "ConferenciaID", "Name", equipo.ConferenciaID);
             ViewBag.DivisionID = new SelectList(db.Divisions, "DivisionID", "Name", equipo.DivisionID);
             ViewBag.EstadoID = new SelectList(db.Estados, "EstadoID", "Name", equipo.EstadoID);
             return View(equipo);
@@ -85,7 +88,7 @@ namespace nba_project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EquipoID,Name,DivisionID,EstadoID")] Equipo equipo)
+        public ActionResult Edit([Bind(Include = "EquipoID,Name,DivisionID,EstadoID,ConferenciaID")] Equipo equipo)
         {
             if (ModelState.IsValid)
             {
@@ -93,6 +96,7 @@ namespace nba_project.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.ConferenciaID = new SelectList(db.Conferencias, "ConferenciaID", "Name", equipo.ConferenciaID);
             ViewBag.DivisionID = new SelectList(db.Divisions, "DivisionID", "Name", equipo.DivisionID);
             ViewBag.EstadoID = new SelectList(db.Estados, "EstadoID", "Name", equipo.EstadoID);
             return View(equipo);

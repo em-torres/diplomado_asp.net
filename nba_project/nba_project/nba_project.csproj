@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConferenciasController.cs" />
     <Compile Include="Controllers\DivisionesController.cs" />
     <Compile Include="Controllers\EquiposController.cs" />
     <Compile Include="Controllers\EstadosController.cs" />
@@ -134,6 +135,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Conferencia.cs" />
     <Compile Include="Models\Division.cs" />
     <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\Estado.cs" />
@@ -221,16 +223,21 @@
     <Content Include="Views\Divisiones\Details.cshtml" />
     <Content Include="Views\Divisiones\Edit.cshtml" />
     <Content Include="Views\Divisiones\Index.cshtml" />
-    <Content Include="Views\Equipos\Create.cshtml" />
-    <Content Include="Views\Equipos\Delete.cshtml" />
-    <Content Include="Views\Equipos\Details.cshtml" />
-    <Content Include="Views\Equipos\Edit.cshtml" />
-    <Content Include="Views\Equipos\Index.cshtml" />
     <Content Include="Views\Estados\Create.cshtml" />
     <Content Include="Views\Estados\Delete.cshtml" />
     <Content Include="Views\Estados\Details.cshtml" />
     <Content Include="Views\Estados\Edit.cshtml" />
     <Content Include="Views\Estados\Index.cshtml" />
+    <Content Include="Views\Conferencias\Create.cshtml" />
+    <Content Include="Views\Conferencias\Delete.cshtml" />
+    <Content Include="Views\Conferencias\Details.cshtml" />
+    <Content Include="Views\Conferencias\Edit.cshtml" />
+    <Content Include="Views\Conferencias\Index.cshtml" />
+    <Content Include="Views\Equipos\Create.cshtml" />
+    <Content Include="Views\Equipos\Delete.cshtml" />
+    <Content Include="Views\Equipos\Details.cshtml" />
+    <Content Include="Views\Equipos\Edit.cshtml" />
+    <Content Include="Views\Equipos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

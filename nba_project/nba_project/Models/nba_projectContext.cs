@@ -16,5 +16,6 @@ namespace nba_project.Models
         public DbSet<Equipo> Equipos { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Division> Divisions { get; set; }
+        public DbSet<Conferencia> Conferencias { get; set; }
     }
 }

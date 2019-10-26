@@ -28,8 +28,13 @@ namespace nba_project.Models
         [Display(Name = "Estado")]
         public int EstadoID { get; set; }
 
-        public virtual Division Division { get; set; }
+        [Range(1, double.MaxValue, ErrorMessage = "Debe seleccionar un {0}")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio")]
+        [Display(Name = "Conferencia")]
+        public int ConferenciaID { get; set; }
 
+        public virtual Division Division { get; set; }
         public virtual Estado Estado { get; set; }
+        public virtual Conferencia Conferencia { get; set; }
     }
 }
