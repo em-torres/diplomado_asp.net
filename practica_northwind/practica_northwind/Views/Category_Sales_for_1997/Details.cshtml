@@ -1,0 +1,26 @@
+﻿@model practica_northwind.Models.Category_Sales_for_1997
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Category_Sales_for_1997</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategorySales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategorySales)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryName }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

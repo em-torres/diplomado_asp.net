@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Northwind</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Material Kit CSS -->
+    @Styles.Render("~/Content/material-dashboard.css")
+    <!-- Material Demo File -->
+    @Styles.Render("~/Content/material-demo/demo.css")
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-color="azure" data-background-color="white">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+                Tip 2: you can also add an image using data-image tag
+            -->
+            <div class="logo">
+                <a href="/" class="simple-text logo-normal">
+                    Northwind
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class="material-icons">dashboard</i>
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/categories">
+                            <i class="material-icons">label</i>
+                            <p>Categories</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#customersDrop" aria-expanded="False" aria-controls="customersDrop">
+                            <i class="material-icons">people</i>
+                            <p>Customers <b class="caret"></b> </p>
+                        </a>
+                        <div class="collapse" id="customersDrop">
+                            <ul class="nav sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/customers">
+                                        <span class="sidebar-mini"> C </span>
+                                        <span class="sidebar-normal"> Customers </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/customerdemographics">
+                                        <span class="sidebar-mini"> CD </span>
+                                        <span class="sidebar-normal">Customers Demographics</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/employees">
+                            <i class="material-icons">directions_walk</i>
+                            <p>Employees</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ordersDrop" aria-expanded="False" aria-controls="ordersDrop">
+                            <i class="material-icons">local_atm</i>
+                            <p>Orders <b class="caret"></b> </p>
+                        </a>
+                        <div class="collapse" id="ordersDrop">
+                            <ul class="nav sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/orders">
+                                        <span class="sidebar-mini"> O </span>
+                                        <span class="sidebar-normal"> Orders </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/order_detail">
+                                        <span class="sidebar-mini"> OD </span>
+                                        <span class="sidebar-normal">Order Detail</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products">
+                            <i class="material-icons">assignment</i>
+                            <p>Products</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/regions">
+                            <i class="material-icons">map</i>
+                            <p>Regions</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shippers">
+                            <i class="material-icons">local_shipping</i>
+                            <p>Shippers</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/suppliers">
+                            <i class="material-icons">store_mall_directory</i>
+                            <p>Suppliers</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/territories">
+                            <i class="material-icons">satellite</i>
+                            <p>Territories</p>
+                        </a>
+                    </li>
+                    <!-- your sidebar here -->
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel bg-light">
+            <div class="content">
+                <div class="container-fluid">
+                    <main>
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+                            @*<li>
+                    <a href="https://www.creative-tim.com">
+                        Creative Tim
+                    </a>
+                </li>*@
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, Derechos Reservados
+                    </div>
+                    <!-- your footer here -->
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!--   Core JS Files   -->
+    @Scripts.Render("~/Scripts/material-js/core/jquery.min.js")
+    @Scripts.Render("~/Scripts/material-js/core/popper.min.js")
+    @Scripts.Render("~/Scripts/material-js/core/bootstrap-material-design.min.js")
+    @Scripts.Render("~/Scripts/material-js/plugins/perfect-scrollbar.jquery.min.js")
+    <!-- Plugin for the momentJs  -->
+    @Scripts.Render("~/Scripts/material-js/plugins/moment.min.js")
+    <!--  Plugin for Sweet Alert -->
+    @Scripts.Render("~/Scripts/material-js/plugins/sweetalert2.js")
+    <!-- Forms Validations Plugin -->
+    @Scripts.Render("~/Scripts/material-js/plugins/jquery.validate.min.js")
+    <!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    @Scripts.Render("~/Scripts/material-js/plugins/jquery.bootstrap-wizard.js")
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    @Scripts.Render("~/Scripts/material-js/plugins/bootstrap-selectpicker.js")
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    @Scripts.Render("~/Scripts/material-js/plugins/bootstrap-datetimepicker.min.js")
+    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
+    @Scripts.Render("~/Scripts/material-js/plugins/jquery.datatables.min.js")
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    @Scripts.Render("~/Scripts/material-js/plugins/bootstrap-tagsinput.js")
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    @Scripts.Render("~/Scripts/material-js/plugins/jasny-bootstrap.min.js")
+    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+    @Scripts.Render("~/Scripts/material-js/plugins/fullcalendar.min.js")
+    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+    @Scripts.Render("~/Scripts/material-js/plugins/jquery-jvectormap.js")
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    @Scripts.Render("~/Scripts/material-js/plugins/nouislider.min.js")
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!-- Library for adding dinamically elements -->
+    @Scripts.Render("~/Scripts/material-js/plugins/arrive.min.js")
+    <!--  Google Maps Plugin    -->
+    @*<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>*@
+    <!-- Chartist JS -->
+    @Scripts.Render("~/Scripts/material-js/plugins/chartist.min.js")
+    <!--  Notifications Plugin    -->
+    @Scripts.Render("~/Scripts/material-js/plugins/bootstrap-notify.js")
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    @Scripts.Render("~/Scripts/material-js/material-dashboard.js?v=2.1.1")
+    <!-- Dashboard functionality -->
+    @Scripts.Render("~/Scripts/material-js/material-dashboard-function.js")
+
+    <!-- All the other Scripts-->
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
+
