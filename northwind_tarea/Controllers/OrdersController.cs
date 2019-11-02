@@ -29,6 +29,7 @@ namespace northwind_tarea.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Order order = db.Orders.Find(id);
+            order.Order_Details = db.Order_Details.Where(s => s.OrderID == id).ToList();
             if (order == null)
             {
                 return HttpNotFound();
