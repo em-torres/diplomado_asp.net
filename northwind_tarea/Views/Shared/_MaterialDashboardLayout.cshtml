@@ -13,6 +13,8 @@
     @Styles.Render("~/Content/material-dashboard.css")
     <!-- Material Demo File -->
     @Styles.Render("~/Content/material-demo/demo.css")
+    <!--   JQuery   -->
+    @Scripts.Render("~/bundles/jquery")
 </head>
 
 <body>
@@ -122,10 +124,10 @@
                     <nav class="float-left">
                         <ul>
                             @*<li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>*@
+                                    <a href="https://www.creative-tim.com">
+                                        Creative Tim
+                                    </a>
+                                </li>*@
                         </ul>
                     </nav>
                     <div class="copyright float-right">
@@ -186,6 +188,7 @@
 
     <!-- All the other Scripts-->
     @RenderSection("scripts", required: false)
+
 </body>
 
 </html>

@@ -127,9 +127,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ZodiacoChecker.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\ZodiacoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +144,19 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Zodiaco\acuar.jpg" />
+    <Content Include="Content\Zodiaco\aries.jpg" />
+    <Content Include="Content\Zodiaco\cance.jpg" />
+    <Content Include="Content\Zodiaco\capri.jpg" />
+    <Content Include="Content\Zodiaco\escor.jpg" />
+    <Content Include="Content\Zodiaco\gemin.jpg" />
+    <Content Include="Content\Zodiaco\leo.jpg" />
+    <Content Include="Content\Zodiaco\libra.jpg" />
+    <Content Include="Content\Zodiaco\ophiu.jpg" />
+    <Content Include="Content\Zodiaco\pisci.jpg" />
+    <Content Include="Content\Zodiaco\sagit.jpg" />
+    <Content Include="Content\Zodiaco\tauro.jpg" />
+    <Content Include="Content\Zodiaco\virgo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -206,10 +224,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Personas\Create.cshtml" />
+    <Content Include="Views\Personas\Delete.cshtml" />
+    <Content Include="Views\Personas\Details.cshtml" />
+    <Content Include="Views\Personas\Edit.cshtml" />
+    <Content Include="Views\Personas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

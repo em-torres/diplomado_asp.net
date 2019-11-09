@@ -25,7 +25,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.Employee.LastName)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.Shipper.CompanyName):
@@ -33,7 +33,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.Shipper.CompanyName)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.OrderDate):
@@ -41,7 +41,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.OrderDate)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.RequiredDate):
@@ -49,7 +49,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.RequiredDate)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.ShippedDate):
@@ -57,7 +57,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.ShippedDate)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.Freight):
@@ -65,7 +65,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.Freight)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.ShipName):
@@ -73,7 +73,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.ShipName)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.ShipAddress):
@@ -81,7 +81,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.ShipAddress)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.ShipCity):
@@ -89,7 +89,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.ShipCity)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.ShipRegion):
@@ -97,7 +97,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.ShipRegion)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.ShipPostalCode):
@@ -105,7 +105,7 @@
         <dd class="d-inline">
             @Html.DisplayFor(model => model.ShipPostalCode)
         </dd>
-        
+
         <br />
         <dt class="d-inline">
             @Html.DisplayNameFor(model => model.ShipCountry):
@@ -117,56 +117,16 @@
 </div>
 
 <br />
-<h4 class="text-center"><strong>Order Details</strong></h4>
-<table class="table table-sm table-hover">
-    <tr class="text-center">
-        <th>
-            Customer ID
-            @*@Html.DisplayNameFor(model => model.Order.CustomerID)*@
-        </th>
-        <th>
-            Product Name
-            @*@Html.DisplayNameFor(model => model.Product.ProductName)*@
-        </th>
-        <th>
-            Unit Price
-            @*@Html.DisplayNameFor(model => model.UnitPrice)*@
-        </th>
-        <th>
-            Quantity
-            @*@Html.DisplayNameFor(model => model.Quantity)*@
-        </th>
-        <th>
-            Discount
-            @*@Html.DisplayNameFor(model => model.Discount)*@
-        </th>
-    </tr>
+<p id="orderDetails" class="btn btn-primary" OrderID="@Model.OrderID">Detalle de Compra</p>
+<br />
 
-    @foreach (var item in Model.Order_Details)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Order.CustomerID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.ProductName)
-            </td>
-            <td class="text-right">
-                @Html.DisplayFor(modelItem => item.UnitPrice)
-            </td>
-            <td class="text-center">
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td class="text-right">
-                @Html.DisplayFor(modelItem => item.Discount)
-            </td>
-        </tr>
-    }
+<div id="listadoOrdenCompra"></div>
 
-</table>
 
 <br />
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@Scripts.Render("/Scripts/NW_Orders/nw_orders.js")

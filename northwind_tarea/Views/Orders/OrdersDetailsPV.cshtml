@@ -1,0 +1,43 @@
+﻿@model IEnumerable<northwind_tarea.Models.Order_Detail>
+
+<h4 class="text-center"><strong>Order Details</strong></h4>
+<table class="table table-sm table-hover">
+    <tr class="text-center">
+        <th>
+            Customer ID
+        </th>
+        <th>
+            Product Name
+        </th>
+        <th>
+            Unit Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Discount
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductName)
+            </td>
+            <td class="text-right">
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td class="text-right">
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+        </tr>
+    }
+</table>

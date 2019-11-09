@@ -1,0 +1,43 @@
+﻿@using tarea_zodiaco.Helpers
+@model tarea_zodiaco.Models.Persona
+
+@{
+    ViewBag.Title = "Details";
+    ZodiacoChecker zodiaco = new ZodiacoChecker();
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Model.Birthday.Value.ToString("dd/MM/yyyy")
+        
+        <dt>
+            Signo del Zodiaco
+        </dt>
+        
+        <dd>
+            <img src="@Url.Content("/Content/Zodiaco/" + zodiaco.imagen_signo(Model.Birthday))" height="240" width="400" alt="Alternate Text" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

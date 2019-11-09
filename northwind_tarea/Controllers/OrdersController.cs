@@ -21,6 +21,13 @@ namespace northwind_tarea.Controllers
             return View(orders.ToList());
         }
 
+        public ActionResult OrdersDetailsPV(int? id)
+        {
+            var order = db.Order_Details.Where(s => s.OrderID == id).ToList();
+
+            return PartialView(order);
+        }
+
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
