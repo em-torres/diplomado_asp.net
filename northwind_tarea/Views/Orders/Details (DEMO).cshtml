@@ -1,0 +1,132 @@
+﻿@using WebGrease.Css.Extensions
+@model northwind_tarea.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.Customer.CompanyName):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.Customer.CompanyName)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.Employee.LastName):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.Employee.LastName)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.Shipper.CompanyName):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.Shipper.CompanyName)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.OrderDate):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.RequiredDate):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.RequiredDate)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.ShippedDate):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.ShippedDate)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.Freight):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.Freight)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.ShipName):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.ShipName)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.ShipAddress):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.ShipAddress)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.ShipCity):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.ShipCity)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.ShipRegion):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.ShipRegion)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.ShipPostalCode):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.ShipPostalCode)
+        </dd>
+
+        <br />
+        <dt class="d-inline">
+            @Html.DisplayNameFor(model => model.ShipCountry):
+        </dt>
+        <dd class="d-inline">
+            @Html.DisplayFor(model => model.ShipCountry)
+        </dd>
+    </dl>
+</div>
+
+<br />
+<p id="orderDetails" class="btn btn-primary" OrderID="@Model.OrderID">Detalle de Compra</p>
+<br />
+
+<div id="listadoOrdenCompra"></div>
+
+
+<br />
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@Scripts.Render("/Scripts/NW_Orders/nw_orders.js")

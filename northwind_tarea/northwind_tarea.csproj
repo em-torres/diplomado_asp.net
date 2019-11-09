@@ -480,6 +480,8 @@
     <Content Include="Views\Territories\Index.cshtml" />
     <Content Include="Views\Orders\OrdersDetails.cshtml" />
     <Content Include="Views\Orders\OrdersDetailsPV.cshtml" />
+    <Content Include="Views\Orders\OrdersDetailsPV %28DEMO%29.cshtml" />
+    <Content Include="Views\Orders\Details %28DEMO%29.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
