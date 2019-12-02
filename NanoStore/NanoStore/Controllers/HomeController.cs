@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace NanoStore.Controllers
 {
@@ -13,6 +14,7 @@ namespace NanoStore.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Administrador")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
