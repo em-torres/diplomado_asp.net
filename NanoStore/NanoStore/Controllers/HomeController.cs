@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using NanoStore.Helpers.Auth;
 
 namespace NanoStore.Controllers
 {
@@ -14,7 +15,7 @@ namespace NanoStore.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrador")]
+        [CustomAuth(Roles = "Administrador")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

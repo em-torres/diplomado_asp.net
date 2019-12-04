@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "Acceso Denegado";
+    Layout = "~/Views/Shared/_AccessDeniedLayout.cshtml";
+}
+
+<h2>403 - Acceso Denegado</h2>
+<p>No tiene autorización para ver este recurso.</p>
+<a href="@Url.Action("Index", "Home")">Volver al Inicio</a>
