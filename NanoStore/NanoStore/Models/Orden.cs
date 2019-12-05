@@ -13,7 +13,7 @@ namespace NanoStore.Models
         [Key]
         public int OrdenID { get; set; }
 
-        [ForeignKey("ApplicationUsers")]
+        //[ForeignKey("ApplicationUsers")]
         public string ClienteID { get; set; }
 
         public DateTime? FechaOrden { get; set; }

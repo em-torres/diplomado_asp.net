@@ -9,7 +9,6 @@ namespace NanoStore.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationDataLossAllowed = true;
             AutomaticMigrationsEnabled = true;
         }
 

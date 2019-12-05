@@ -15,7 +15,6 @@ namespace NanoStore.Controllers
             return View();
         }
 
-        [CustomAuth(Roles = "Administrador")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<NanoStore.Models.Orden>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClienteID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaOrden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaRequerido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEntrega)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnviarVia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Freight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destinatario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionEnvio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClienteID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaOrden)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaRequerido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEntrega)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnviarVia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Freight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destinatario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionEnvio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrdenID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrdenID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrdenID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -32,7 +32,7 @@ namespace NanoStore
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
-            // En Startup creando un Rol Administrador y un usuario para el mismo
+            // Creando el rol Administrador y un usuario para el mismo
             if (!roleManager.RoleExists("Admin"))
             {
                 var userAdmin = new UserDataCt { Email = "admin@test.com", Pass = "Aguacate01*", Role = "Administrador" };

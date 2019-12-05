@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ecommerce">
+    <title>@ViewBag.Title / NanoStore - eCommerce Website Template</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/Content/Emart/img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/Content/Emart/css/bootstrap.min.css" type="text/css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/Content/Emart/fonts/font-awesome.min.css" type="text/css">
+    <!-- Line Icons CSS -->
+    <link rel="stylesheet" href="/Content/Emart/fonts/line-icons/line-icons.css" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/Content/Emart/css/main.css" type="text/css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/Content/Emart/extras/animate.css" type="text/css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="/Content/Emart/extras/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/Content/Emart/extras/owl.theme.css" type="text/css">
+    <!-- Slicknav Css -->
+    <link rel="stylesheet" href="/Content/Emart/css/slicknav.css" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="/Content/Emart/css/responsive.css" type="text/css">
+
+</head>
+
+<body>
+    <!-- Header Section Start -->
+    <div class="header">
+    <!-- Start Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-2">
+                        <div class="language-wrapper">
+                            <div class="box-language">
+                                <form id="form-language">
+                                    <div class="btn-group toggle-wrap">
+                                        <span class="toggle">
+                                            <span><img src="/Content/Emart/img/language/es.png" alt="English" title="Español" height="11" width="16"> Esp</span>
+                                            <span class="hidden">Idioma</span>
+                                        </span>
+                                        <ul style="display: none;" class="toggle_cont pull-right">
+                                            <li>
+                                                <button class="language-select selected" type="button" name="es-es">
+                                                    <img src="/Content/Emart/img/language/es.png" alt="Spanish" title="English" height="11" width="16">
+                                                    Español
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="box-currency">
+                                <form method="post" id="form-currency">
+                                    <div class="btn-group toggle-wrap">
+                                        <span class="toggle">
+                                            $ DOP
+                                        </span>
+                                        <ul class="toggle_cont pull-right">
+                                            <li>
+                                                <button class="currency-select selected" type="button" name="DOP">
+                                                    $ DOP
+                                                </button>
+                                            </li>
+                                            @*<li>
+                                                <button class="currency-select" type="button" name="DOP">
+                                                    $ USD
+                                                </button>
+                                            </li>*@
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                            <a href="#"><i class="icon-phone"></i> Tel.: (855) 677-5289</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="col-md-8 col-sm-10">
+                        <!-- shopping cart end -->
+                        @*<div class="search-area">
+            <form>
+                <div class="control-group">
+                    <ul class="categories-filter animate-dropdown">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="category.html">Categories <span class="caret"></span></a>
+                            <ul class="dropdown-menu animated fadeIn">
+                                <li class="menu-header">Clothing</li>
+                                <li><a tabindex="-1" href="#">- Men</a></li>
+                                <li><a tabindex="-1" href="#">- Women</a></li>
+                                <li><a tabindex="-1" href="#">- Boys</a></li>
+                                <li><a tabindex="-1" href="#">- Girls</a></li>
+                                <li class="menu-header">Electronics</li>
+                                <li><a tabindex="-1" href="#">- Laptops</a></li>
+                                <li><a tabindex="-1" href="#">- Desktops</a></li>
+                                <li><a tabindex="-1" href="#">- Cameras</a></li>
+                                <li><a tabindex="-1" href="#">- Mobile Phones</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <input class="search-field" placeholder="Search here...">
+                    <a class="search-button" href="#"><i class="icon-magnifier"></i></a>
+                </div>
+            </form>
+        </div>*@
+
+                        <div class="shop-cart">
+                            <ul>
+                                <li><a class="cart-icon cart-btn" href="#"><span class="icon-heart"></span></a></li>
+                                <li>
+                                    <a href="#" class="cart-icon cart-btn">
+                                        <i class="icon-basket"></i>
+                                        <span class="cart-label">
+                                            @(ViewBag.CartCount != null || ViewBag.CartCount > 0 ? ViewBag.CartCount : 0)
+                                        </span>
+                                    </a>
+                                    <div class="cart-box">
+                                        @*<div class="popup-container">
+                            <div class="cart-entry">
+                                <a href="#" class="image">
+                                    <img src="assets/img/products/product-menu-1.jpg" alt="">
+                                </a>
+                                <div class="content">
+                                    <a href="#" class="title">Pullover Batwing</a>
+                                    <p class="quantity">Quantity: 3</p>
+                                    <span class="price">$45.00</span>
+                                </div>
+                                <div class="button-x">
+                                    <i class="icon-close"></i>
+                                </div>
+                            </div>
+                            <div class="cart-entry">
+                                <a href="#" class="image">
+                                    <img src="assets/img/products/product-menu-2.jpg" alt="">
+                                </a>
+                                <div class="content">
+                                    <a href="#" class="title">Pullover Batwing</a>
+                                    <p class="quantity">Quantity: 3</p>
+                                    <span class="price">$90.00</span>
+                                </div>
+                                <div class="button-x">
+                                    <i class="icon-close"></i>
+                                </div>
+                            </div>
+                            <div class="summary">
+                                <div class="subtotal">Sub Total</div>
+                                <div class="price-s">$210.5</div>
+                            </div>
+                            <div class="cart-buttons">
+                                <a href="#" class="btn btn-border-2">View Cart</a>
+                                <a href="#" class="btn btn-common">Checkout</a>
+                                <div class="clear"></div>
+                            </div>
+                        </div>*@
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        @Html.Partial("_LoginEmart")
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Bar -->
+        <!-- Start  Logo & Naviagtion  -->
+        <nav class="navbar navbar-default" data-spy="affix" data-offset-top="50">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="/">
+                            <img src="/Content/Admin/ArchitecUI/nanostore-orig.png" alt="">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <!-- Start Navigation List -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="active" href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Tienda
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/About">
+                                    Nosotros
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Home/Contact">
+                                    Contacto
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Logo & Naviagtion -->
+            <!-- Mobile Menu Start -->
+            <ul class="mobile-menu">
+                <li>
+                    <a class="active" href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="Home/About">About</a>
+                </li>
+                <li>
+                    <a href="#">Shop</a>
+                <li>
+                    <a href="Home/Contact">Contact</a>
+                </li>
+            </ul>
+            <!-- Mobile Menu End -->
+        </nav>
+    </div>
+    <!-- Header Section End -->
+
+    @RenderBody()
+
+    <!-- Footer Start -->
+    <footer class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="Contacto">
+                        <h3 class="widget-title">Contact Us</h3>
+                        <ul class="contact-list">
+                            <li><i class="icon-home"></i> <span>Calle del Valle, No. 88, Santo Domingo, Rep. Dom.</span></li>
+                            <li><i class="icon-call-out"></i> <span>(855) 677-5289</span></li>
+                            <li><i class="icon-envelope"></i> <span>ventas@nanostore.com  soporte@nanostore.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h3 class="widget-title">Enlaces Importantes</h3>
+                    <ul>
+                        <li><a href="/Manage">Mi Cuenta</a></li>
+                        <li><a href="/Home/Contact">Contacto</a></li>
+                        <li><a href="#">Procesar Pago</a></li>
+                        <li><a href="#">Lista de Deseos</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    @*<h3 class="widget-title">Product Tags</h3>
+                    <div class="tagcloud">
+                        <a href="#" class="tag-link">Accessories</a>
+                        <a href="#" class="tag-link">Bags</a>
+                        <a href="#" class="tag-link">Bestseller</a>
+                        <a href="#" class="tag-link">Handpicked</a>
+                        <a href="#" class="tag-link">Dresses</a>
+                        <a href="#" class="tag-link">Men Fashion</a>
+                        <a href="#" class="tag-link">Sell Off</a>
+                        <a href="#" class="tag-link">Shoes</a>
+                        <a href="#" class="tag-link">Specials</a>
+                        <a href="#" class="tag-link">Tops</a>
+                        <a href="#" class="tag-link">Women Fashion</a>
+                    </div>*@
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="block-subscribe">
+                        <h3 class="widget-title">Suscribete</h3>
+                        <p>Se parte de la comunidad, escribe tu correo y te enviaremos ofertas y mucho, mucho mas!!</p>
+                        <form class="subscribe">
+                            <input type="text" class="form-control" name="email" placeholder="Ingrese el Correo Electronico">
+                            <button type="submit" class="btn btn-common">Suscribir</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Copyright Start -->
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p>&copy; Todos los Derechos Reservados (@DateTime.Today.Year) - Diseñado y Creado por <a rel="nofollow" href="#">POP Developers</a></p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="payment pull-right">
+                        <img src="/Content/Emart/img/payment.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="icon-arrow-up"></i>
+    </a>
+
+
+    <!-- Start Loader -->
+    <div id="loader">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+
+    <!-- All js here -->
+    <script type="text/javascript" src="/Scripts/Emart/jquery-min.js"></script>
+    <script type="text/javascript" src="/Scripts/Emart/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Emart/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Emart/classie.js"></script>
+    <script type="text/javascript" src="/Scripts/Emart/slick.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Emart/jquery.slicknav.js"></script>
+    <script type="text/javascript" src="/Scripts/Emart/main.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
