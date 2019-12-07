@@ -20,6 +20,8 @@ namespace NanoStore.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ProductoID { get; set; }
 
+        public string ClienteID { get; set; }
+
         [Column(TypeName = "money")]
         public decimal PrecioUnitario { get; set; }
 
@@ -28,6 +30,7 @@ namespace NanoStore.Models
         public float Descuento { get; set; }
 
 
+        public virtual ApplicationUser ApplicationUsers { get; set; }
         public virtual Orden Orden { get; set; }
         public virtual Producto Producto { get; set; }
     }

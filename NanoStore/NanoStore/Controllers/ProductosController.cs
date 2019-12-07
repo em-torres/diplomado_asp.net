@@ -6,10 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using NanoStore.Helpers.Auth;
 using NanoStore.Models;
 
 namespace NanoStore.Controllers
 {
+    [CustomAuth(Roles = "Administrador")]
     public class ProductosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -48,7 +50,7 @@ namespace NanoStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductoID,NombreProducto,CategoriaID,PrecioUnitario,UnidadesEnAlmacen,EstadoProducto,ImagenPr")] Producto producto)
+        public ActionResult Create([Bind(Include = "ProductoID,NombreProducto,CategoriaID,PrecioUnitario,UnidadesEnAlmacen,DetalleProducto,EstadoProducto,ImagenPr,FechaIngreso")] Producto producto)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +84,7 @@ namespace NanoStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductoID,NombreProducto,CategoriaID,PrecioUnitario,UnidadesEnAlmacen,EstadoProducto,ImagenPr")] Producto producto)
+        public ActionResult Edit([Bind(Include = "ProductoID,NombreProducto,CategoriaID,PrecioUnitario,UnidadesEnAlmacen,DetalleProducto,EstadoProducto,ImagenPr,FechaIngreso")] Producto producto)
         {
             if (ModelState.IsValid)
             {

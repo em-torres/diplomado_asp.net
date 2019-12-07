@@ -177,6 +177,7 @@
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\OrdenesController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Helpers\ImgHelper.cs" />
     <Compile Include="Helpers\NotEqualConstraint.cs" />
     <Compile Include="Migrations\201912021618090_InitialCreate.cs" />
     <Compile Include="Migrations\201912021618090_InitialCreate.Designer.cs">
@@ -196,6 +197,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Orden.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\RawSql\CategoriasContadorRQ.cs" />
+    <Compile Include="Models\ViewModels\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -217,6 +220,7 @@
     <Content Include="Content\Admin\ArchitecUI\logo-inverse.png" />
     <Content Include="Content\Admin\ArchitecUI\logo.png" />
     <Content Include="Content\Admin\ArchitecUI\architec-ui.css" />
+    <Content Include="Content\Admin\ArchitecUI\nanostore-ig.jpg" />
     <Content Include="Content\Admin\ArchitecUI\nanostore.png" />
     <Content Include="Content\Admin\ArchitecUI\nanostore-orig.png" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -320,6 +324,7 @@
     <Content Include="Content\Emart\img\reviewer\1.jpg" />
     <Content Include="Content\Emart\img\reviewer\2.jpg" />
     <Content Include="Content\Emart\img\search-angle.png" />
+    <Content Include="Content\Emart\img\shopping-icon.png" />
     <Content Include="Content\Emart\img\single-product\img1.jpg" />
     <Content Include="Content\Emart\img\single-product\img2.jpg" />
     <Content Include="Content\Emart\img\single-product\img3.jpg" />
@@ -541,20 +546,27 @@
     <Content Include="Views\Categorias\Edit.cshtml" />
     <Content Include="Views\Categorias\Index.cshtml" />
     <Content Include="Views\Shared\_EmartLayout.cshtml" />
-    <Content Include="Views\Productos\Create.cshtml" />
-    <Content Include="Views\Productos\Delete.cshtml" />
-    <Content Include="Views\Productos\Details.cshtml" />
-    <Content Include="Views\Productos\Edit.cshtml" />
-    <Content Include="Views\Productos\Index.cshtml" />
     <Content Include="Views\Ordenes\Create.cshtml" />
     <Content Include="Views\Ordenes\Delete.cshtml" />
     <Content Include="Views\Ordenes\Details.cshtml" />
     <Content Include="Views\Ordenes\Edit.cshtml" />
     <Content Include="Views\Ordenes\Index.cshtml" />
     <Content Include="Views\Shared\_LoginEmart.cshtml" />
+    <Content Include="Views\Home\Index %28old%29.cshtml" />
+    <Content Include="Views\Home\ShopCollectionPartial.cshtml" />
+    <Content Include="Views\Home\ShopSupportPartial.cshtml" />
+    <Content Include="Views\Home\Store.cshtml" />
+    <Content Include="Views\Home\ShopCategoriesPartial.cshtml" />
+    <Content Include="Views\Home\ShopItemsPartial.cshtml" />
+    <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Productos\Delete.cshtml" />
+    <Content Include="Views\Productos\Details.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

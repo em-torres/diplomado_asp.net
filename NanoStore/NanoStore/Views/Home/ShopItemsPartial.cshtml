@@ -1,0 +1,80 @@
+﻿<div class="tab-content">
+    <div id="grid-view" class="tab-pane active">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="shop-product">
+                <div class="product-box">
+                    <a href="#">
+                        <img src="@(item.ImagenPr != null ? "" : "/Content/Emart/img/shopping-icon.png")" alt="">
+                    </a>
+                    <div class="cart-overlay">
+                    </div>
+                    <div class="actions">
+                        <div class="add-to-links">
+                            <a href="#" class="btn-cart" data-original-title="" title=""><i class="icon-basket"></i></a>
+                            <a href="#" class="btn-wish" data-original-title="" title=""><i class="icon-heart"></i></a>
+                            @*<a class="btn-quickview md-trigger" data-modal="modal-3" data-original-title="" title=""><i class="icon-eye"></i></a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h4 class="product-title text-capitalize"><a href="#">@item.NombreProducto</a></h4>
+                    <div class="align-items">
+                        <div class="pull-left">
+                            <span class="price">@String.Format("${0:0,0.00}", item.PrecioUnitario)</span>
+                        </div>
+                        <div class="pull-right">
+                            <div class="reviews-icon">
+                                @item.Categoria.NombreCategoria
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+    
+    <div id="list-view" class="tab-pane">
+        <div class="shop-list">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-12">
+                    <div class="shop-product clearfix">
+                        <div class="product-box">
+                            <a href="#"><img src="@(item.ImagenPr != null ? "" : "/Content/Emart/img/shopping-icon.png")" alt=""></a>
+                            <div class="cart-overlay">
+                            </div>
+                            <div class="actions">
+                                <div class="add-to-links">
+                                    <a href="#" class="btn-cart" data-original-title="" title=""><i class="icon-basket"></i></a>
+                                    <a href="#" class="btn-wish" data-original-title="" title=""><i class="icon-heart"></i></a>
+                                    @*<a class="btn-quickview md-trigger" data-modal="modal-3" data-original-title="" title=""><i class="icon-eye"></i></a>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="fix">
+                                <h4 class="product-title text-capitalize pull-left"><a href="#">@item.NombreProducto</a></h4>
+                                <div class="star-rating pull-right">
+                                    <div class="reviews-icon">
+                                        @item.Categoria.NombreCategoria
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fix mb-10">
+                                <span class="price">@String.Format("${0:0,0.00}", item.PrecioUnitario)</span>
+                            </div>
+                            <div class="product-description mb-20">
+                                <p>@item.DetalleProducto</p>
+                            </div>
+                            <button class="btn btn-common"><i class="fa fa-heart-o" aria-hidden="true"></i> Agregar a Lista de Deseos</button>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

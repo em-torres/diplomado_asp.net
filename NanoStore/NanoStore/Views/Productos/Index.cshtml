@@ -25,10 +25,16 @@
             @Html.DisplayNameFor(model => model.UnidadesEnAlmacen)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.DetalleProducto)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.EstadoProducto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ImagenPr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
         </th>
         <th></th>
     </tr>
@@ -48,10 +54,16 @@
             @Html.DisplayFor(modelItem => item.UnidadesEnAlmacen)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.DetalleProducto)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.EstadoProducto)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ImagenPr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIngreso)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProductoID }) |

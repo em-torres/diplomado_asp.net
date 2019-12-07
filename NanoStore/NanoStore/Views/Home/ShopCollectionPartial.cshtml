@@ -1,0 +1,48 @@
+﻿<!-- Shop Collection Section Start -->
+<section id="shop-collection">
+    <div class="container">
+        <h1 class="section-title">Novedades</h1>
+        <hr class="lines">
+       
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="shop-product">
+                        <div class="product-box">
+                            <a href="#">
+                                @* TODO: Image Database Conversion *@
+                                <img src="@(item.ImagenPr != null ? "" : "/Content/Emart/img/shopping-icon.png")" alt="">
+                            </a>
+                            <div class="cart-overlay">
+                            </div>
+                            <div class="actions">
+                                <div class="add-to-links">
+                                    <a href="#" class="btn-cart"><i class="icon-basket"></i></a>
+                                    <a href="#" class="btn-wish"><i class="icon-heart"></i></a>
+                                    @*<a class="btn-quickview md-trigger" data-modal="modal-3"><i class="icon-eye"></i></a>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title text-capitalize"><a href="product-details.html">@item.NombreProducto</a></h4>
+                            <div class="align-items">
+                                <div class="pull-left">
+                                    <span class="price">@String.Format("${0:0,0.00}", item.PrecioUnitario)</span>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="reviews-icon">
+                                        @item.Categoria.NombreCategoria
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        
+
+    </div>
+</section>
+<!-- Shop Collection Section End -->

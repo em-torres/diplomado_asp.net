@@ -3,6 +3,7 @@
 @using NanoStore.Models
 
 @{
+    
     var user = User.Identity.GetUserName();
     var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
     var roles = userManager.GetRoles(User.Identity.GetUserId()).ToList();
@@ -106,7 +107,7 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        @user
+                                        @(user == "" ? user : "")
                                     </div>
                                     <div class="widget-subheading">
                                         / @foreach (var rol in roles) { @rol; } /
@@ -155,14 +156,14 @@
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">@*Dashboards*@</li>
                             <li>
-                                <a href="/Admin/Categorias" class="mm-active">
+                                <a href="/Categorias" class="mm-active">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Categorias
                                 </a>
                             </li>
                             @*<li class="app-sidebar__heading">UI Components</li>*@
                             <li>
-                                <a href="/Admin/Ordenes">
+                                <a href="/Ordenes">
                                     <i class="metismenu-icon pe-7s-diamond"></i>
                                     Ordenes
                                     @*<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>*@
@@ -219,7 +220,7 @@
                                 </ul>*@
                             </li>
                             <li>
-                                <a href="/Admin/Productos">
+                                <a href="/Productos">
                                     <i class="metismenu-icon pe-7s-car"></i>
                                     Productos
                                     @*<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>*@

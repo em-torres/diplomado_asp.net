@@ -1,0 +1,12 @@
+﻿<div class="widget-ct widget-categories mb-30">
+    <div class="widget-s-title">
+        <h4>Categorias</h4>
+    </div>
+    <ul id="accordion-category" class="product-cat">
+        @foreach (var item in Model)
+        {
+            <li><a href="#">@item.categoria <span>(@item.cantidad)</span></a></li>
+        }
+        <li><a href="#" class="pr-all">Todos los Productos</a></li>
+    </ul>
+</div>
